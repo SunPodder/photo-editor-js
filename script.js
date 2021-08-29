@@ -11,7 +11,10 @@ const img = document.querySelector("img"),
     sepia = "0",
     invert = "0",
     currentFilter = undefined
-  
+  function loadImg(){
+    let inputImg = imgInput.files[0]
+    img.src = URL.createObjectURL(inputImg)
+  }
   function activeBlur(){
     currentFilter = "addBlur()"
     range.setAttribute('oninput', currentFilter)
