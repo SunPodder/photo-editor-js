@@ -4,19 +4,20 @@
   <meta name="viewport" content="width=device-width,  initial-scale=1.0" >
   <title>Photo Editor</title>
   <meta name="description" content="A simple photo editor made with css filters" />
-  <link type="text/css" rel="stylesheet" href="style.css" >
+  <link type="text/css" rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 </head>
 <body>
   <form>
     <div class="center">
-      <label>
+      <label for="imgInput">
         Choose Image
         <input type="file" accept="img/*" id="imgInput" oninput="loadImg()" hidden>
       </label>
     </div>
     <br><br>
     <div class="img-con">
-      <img>
+      <img ondblclick="saveImage()">
     </div>
   </form>
   <br><br>
@@ -26,32 +27,61 @@
     </div>
     <br><br>
     <div class="center">
-      <button onclick="activeGray()">
+      <button onclick="activeGray(this)">
         Gray
       </button>
-      <button onclick="activeBrightness()" >
+      <button onclick="activeBrightness(this)" >
         Brightness
       </button>
-      <button onclick="activeBlur()" >
+      <button onclick="activeBlur(this)" >
         Blur
       </button>
-      <button onclick="activeContrast()" >
+      <button onclick="activeContrast(this)" >
         Contrast
       </button>
-      <button onclick="activeSaturation()" >
+      <button onclick="activeSaturation(this)" >
         Saturation
       </button>
-      <button onclick="activeHue()" >
+      <button onclick="activeHue(this)" >
         Hue
       </button>
-      <button onclick="activeSepia()" >
+      <button onclick="activeSepia(this)" >
         Sepia
       </button>
-      <button onclick="activeInvert()" >
+      <button onclick="activeInvert(this)" >
         invert
       </button>
     </div>
   </div>
+  <canvas></canvas>
+  
+  <br><br><br><br>
+  <div  class="center" >
+    <span type="button" onclick="saveImage()" id="downloadIcon" disabled><i class="fa fa-download"></i> Download</span>
+  </div>
+  <br>
+  
+  <footer class="center">
+    <br><br>
+    <div id="copyright-text">
+      <i class="fa fa-code"></i> with &#128153; by Sun Podder <b>(Open Sourced)</b>
+      <br>
+      Built with pure HTML, CSS and JavaScript
+    </div>
+    <br>
+    <div id="social-icons">
+      <a href="mailto:contact.sunpodder09@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+      &emsp;
+      <a href="https://github.com/SunPodder" target="_blank"><i class="fab fa-github"></i></a>
+      &emsp;
+      <a href="https://facebook.com/sun.podder.09" target="_blank"><i class="fab fa-facebook"></i></a>
+      <!--&emsp;
+      <a href="https://twitter.com/SunPodder" target="_blank"><i class="fab fa-twitter"></i></a-->
+      &emsp;
+      <a href="https://www.linkedin.com/in/sun-podder-610a63211" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+  <br><br><br>
   
   <script type="text/javascript" src="script.js"></script>
 </body>
